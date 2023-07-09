@@ -56,6 +56,25 @@ class vector {
 		vector(const size_type n, const type& value) {
            allocateAndFillN(n,value); 
         }
+
+        
+        size_t size()const{ return finish_ - start_; }
+		size_t capacity()const{ return endOfStorage_ - start_; }
+
+
+        //修改容器相关的操作
+		//清空容器，销毁容器中的所有对象并使容器的size为0，但不回收容器已有的空间
+        // 基础类型 int int* 就不多说了
+        // 自定义一个类 比如说 class Foo
+        // fj::vector<Foo*>  v  
+        // 推断出 T==> Foo*
+        // 是POD, 故执行空 destroy
+        // 若 fj::vector<Foo>  执行 类Foo的析构 
+		void clear() {
+            iterator tmp = b_;
+            dataAllocator::destroy(b_,f_);
+            f_ = b_;
+        }
 		
    
     private:
