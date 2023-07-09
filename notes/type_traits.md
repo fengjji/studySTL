@@ -1,6 +1,6 @@
 <h1 aligin = "center"> type_traits </h1>
 
-``` c++
+```c++
 class A {
 public:
 	A() { std::cout << ".."<<"\n";
@@ -20,7 +20,8 @@ public:
 	}
 	int a = 0;
 };
-//////////////////////
+
+
 
 struct true_type{};
 struct false_type {};
@@ -56,11 +57,12 @@ void funWrapper(T arg) {
 	fun(isPODType());
 }
 
-//////////////////////////////////
+
+
+
 
 A a;
 funWrapper(a);   //  非POD
 funWrapper(&a);  //  POD  
 指针类型 (T*) 算POD 
-
 ```
