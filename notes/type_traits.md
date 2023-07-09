@@ -1,6 +1,6 @@
 <h1 aligin = "center"> type_traits </h1>
-``` c++
 
+``` c++
 class A {
 public:
 	A() { std::cout << ".."<<"\n";
