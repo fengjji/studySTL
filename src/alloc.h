@@ -7,21 +7,18 @@
 #include <cstdlib>
 
 namespace fj {
-    class Alloc {
-    public:
-        enum {MAXSIZE = 4096}; //4K
-        static char* begin_;
-        static char* end_;
-        static size_t  offset_;
+class Alloc {
+public:
+  enum { MAXSIZE = 4096 }; // 4K
+  static char *begin_;
+  static char *end_;
+  static size_t offset_;
 
-    public:
-    static char FreeSpace[MAXSIZE];
-    static void *allocate(size_t bytes);
-    static void deallocate(void *ptr, size_t bytes);
-
+public:
+  static char FreeSpace[MAXSIZE];
+  static void *allocate(size_t bytes);
+  static void deallocate(void *ptr, size_t bytes);
 };
-}
+} // namespace fj
 
-
-
-#endif //ALLOC_H_
+#endif // ALLOC_H_
