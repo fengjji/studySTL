@@ -1,5 +1,5 @@
 <h1 aligin = "center"> type_traits </h1>
-```c++
+``` c++
 
 class A {
 public:
@@ -55,6 +55,7 @@ void funWrapper(T arg) {
 	typedef typename type_traits<T>::is_POD isPODType;
 	fun(isPODType());
 }
+
 //////////////////////////////////
 
 A a;
